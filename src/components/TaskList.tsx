@@ -34,7 +34,9 @@ export function TaskList() {
   }
 
   function handleRemoveTask(id: number) {
-    // Remova uma task da listagem pelo ID
+    let taskList = [...tasks];
+    taskList = taskList.filter(task => task.id != id);
+    setTasks(taskList);
   }
 
   return (
